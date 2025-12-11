@@ -32,13 +32,13 @@ nextButton.addEventListener('click', () => {
     updateSlider(1)
 })
 
-// PREV  ✅ (ISSO NÃO EXISTIA)
+// PREV 
 prevButton.addEventListener('click', () => {
     active = active - 1 < 0 ? last : active - 1
     updateSlider(-1)
 })
 
-// DOTS ✅ (ISSO NÃO EXISTIA)
+// DOTS 
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         if (index === active) return

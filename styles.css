@@ -98,7 +98,6 @@ section .list .item.active {
     transform: translate(-50%, -50%);
 }
 
-/* Efeito que antes era da Lyra – agora padrão */
 .banda-img img {
     width: 100%;
     transform: scale(0.75);
@@ -162,11 +161,10 @@ section .list .item.active {
     line-height: 1em;
     font-family: "League Gothic", sans-serif;
     color: #fff;
-    text-shadow:
-        0 8px 25px rgba(0,0,0,0.4);
+    text-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-/* Efeito da descrição que antes era da Lyra – agora padrão */
+/* ===== DESCRIPTION ===== */
 .description {
     max-width: 400px;
     font-size: 12px;
@@ -180,16 +178,76 @@ section .list .item.active {
     line-height: 1.6;
 }
 
-/* ===== BUTTON ===== */
-.information {
-    border-radius: 30px;
-    height: 35px;
-    width: 120px;
-    border: 2px solid #791fd3;
-    background-color: #beff1b;
-    color: #000;
-    font-weight: bold;
+/* -------------------------------------------------- */
+/* =============== BOTÕES PERSONALIZADOS ============= */
+/* -------------------------------------------------- */
+
+/* ===== BOTÃO PADRÃO – BANDA ===== */
+.item.banda .information {
+    padding: 10px 26px;
+    border-radius: 40px;
+    background: transparent;
+    border: 2px solid #6e6e6d;
+    color: #000000;
     cursor: pointer;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+.item.banda .information:hover {
+    background: rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0 12px #0b0e05;
+    transform: scale(1.05);
+}
+
+/* ===== VOCALISTA – BOTÃO PRETO ===== */
+.item.vocalista .information {
+    padding: 10px 26px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #000;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+.item.vocalista .information:hover {
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 15px #000;
+    transform: scale(1.05);
+}
+
+/* ===== GUITARRISTA – VERDE NEON ===== */
+.item.guitarrista .information {
+    padding: 10px 26px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00ff6a;
+    color: #00ff6a;
+    cursor: pointer;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+.item.guitarrista .information:hover {
+    background: rgba(0, 255, 106, 0.18);
+    box-shadow: 0 0 15px #00ff6a;
+    transform: scale(1.05);
+}
+
+/* ===== PIANISTA – AZUL PROFUNDO ===== */
+.item.pianista .information {
+    padding: 10px 26px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.6);;
+    border: 2px solid #1db4ff;
+    color: #1db4ff;
+    cursor: pointer;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+.item.pianista .information:hover {
+    background: rgba(29, 180, 255, 0.18);
+    box-shadow: 0 0 15px #1db4ff;
+    transform: scale(1.05);
 }
 
 /* ===== ARROWS ===== */
