@@ -238,6 +238,42 @@ section .list .item.active {
     transform: scale(1.05);
 }
 
+/* BAIXISTA — cor âmbar */
+.item.baixista .information {
+    padding: 10px 26px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #ffb400;
+    color: #ffb400;
+    cursor: pointer;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.item.baixista .information:hover {
+    background: rgba(255, 180, 0, 0.18);
+    box-shadow: 0 0 15px #ffb400;
+    transform: scale(1.05);
+}
+
+/* BATERISTA — cor vermelha/fogo */
+.item.baterista .information {
+    padding: 10px 26px;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #ff3c3c;
+    color: #ff3c3c;
+    cursor: pointer;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.item.baterista .information:hover {
+    background: rgba(255, 60, 60, 0.18);
+    box-shadow: 0 0 15px #ff3c3c;
+    transform: scale(1.05);
+}
+
 .item.pianista .information {
     padding: 10px 26px;
     border-radius: 40px;
@@ -318,11 +354,15 @@ section .list .item.active {
     background-color: #beff1b;
 }
 
-/* ================================================== */
 /* =============== MOBILE RESPONSIVE ================= */
-/* ================================================== */
 
 @media (max-width: 900px) {
+
+    .indicators,
+    .indicators ul,
+    .indicators ul li {
+        display: none !important;
+    }
 
     /* HEADER */
     header {
@@ -379,7 +419,7 @@ section .list .item.active {
         transform: translateX(0);
     }
 
-    /* IMAGEM MAIOR */
+    /* IMAGEM */
     .banda-img {
         position: relative;
         width: 80%;
@@ -465,4 +505,5 @@ section .list .item.active {
         width: 10px;
         height: 10px;
     }
+
 }
