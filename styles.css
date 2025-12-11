@@ -311,3 +311,136 @@ section .list .item.active {
     opacity: 1;
     background-color: #beff1b;
 }
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+
+    /* HEADER */
+    header {
+        width: 100%;
+        padding: 20px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+        position: absolute;
+    }
+
+    header img {
+        width: 180px;
+    }
+
+    header nav ul {
+        grid-template-columns: repeat(3, auto);
+        gap: 20px;
+    }
+
+    /* SECTION */
+    section {
+        height: auto;
+        padding-top: 180px;
+        padding-bottom: 160px;
+        background-attachment: scroll;
+    }
+
+    /* LIST */
+    section .list {
+        width: 100%;
+    }
+
+    /* ITEM */
+    section .list .item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(0) !important;
+        opacity: 0;
+    }
+
+    section .list .item.active {
+        opacity: 1;
+    }
+
+    /* IMAGEM */
+    .banda-img {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 85%;
+        margin-bottom: 30px;
+    }
+
+    .banda-img img {
+        transform: scale(1);
+        left: 0;
+    }
+
+    .banda-img::before {
+        width: 250px;
+        height: 250px;
+        filter: blur(30px);
+    }
+
+    /* CONTENT */
+    .content {
+        position: relative;
+        right: 0;
+        width: 90%;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .description {
+        text-align: center;
+        max-width: 95%;
+        font-size: 14px;
+    }
+
+    .content h2 {
+        font-size: 3em;
+    }
+
+    /* BOTÕES */
+    .information {
+        align-self: center;
+    }
+
+    /* ARROWS */
+    .arrows {
+        width: 100%;
+        bottom: 20px;
+        top: auto;
+        transform: translate(-50%, 0);
+        padding: 0 30px;
+    }
+
+    .arrows button {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* INDICATORS */
+    .indicators {
+        width: 100%;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 5px;
+    }
+
+    .indicators .number {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .indicators ul {
+        justify-content: center;
+    }
+
+    .indicators ul li {
+        width: 12px;
+        height: 12px;
+    }
+}
