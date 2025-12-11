@@ -85,12 +85,10 @@ section .list .item.active {
     position: absolute;
     width: 400px;
     height: 400px;
-    background: radial-gradient(
-        circle,
-        rgba(190, 255, 27, 0.45),
-        rgba(121, 31, 211, 0.15),
-        transparent 70%
-    );
+    background: radial-gradient(circle,
+            rgba(190, 255, 27, 0.45),
+            rgba(121, 31, 211, 0.15),
+            transparent 70%);
     filter: blur(50px);
     z-index: -1;
     left: 50%;
@@ -100,7 +98,7 @@ section .list .item.active {
 
 .banda-img img {
     width: 100%;
-    transform: scale(0.75);
+    transform: scale(0.85);
     left: -40px;
     position: relative;
     transition: 0.8s ease;
@@ -115,10 +113,13 @@ section .list .item.active {
 }
 
 @keyframes glowPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.6;
     }
+
     50% {
         transform: translate(-50%, -50%) scale(1.1);
         opacity: 0.9;
@@ -133,8 +134,12 @@ section .list .item.active {
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    /* DESKTOP AINDA À DIREITA */
     justify-content: center;
     align-items: flex-end;
+    text-align: right;
+
     gap: 20px;
     z-index: 2;
 }
@@ -161,7 +166,7 @@ section .list .item.active {
     line-height: 1em;
     font-family: "League Gothic", sans-serif;
     color: #fff;
-    text-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    text-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== DESCRIPTION ===== */
@@ -182,7 +187,6 @@ section .list .item.active {
 /* =============== BOTÕES PERSONALIZADOS ============= */
 /* -------------------------------------------------- */
 
-/* ===== BOTÃO PADRÃO – BANDA ===== */
 .item.banda .information {
     padding: 10px 26px;
     border-radius: 40px;
@@ -193,13 +197,13 @@ section .list .item.active {
     transition: 0.3s ease;
     backdrop-filter: blur(5px);
 }
+
 .item.banda .information:hover {
     background: rgba(0, 0, 0, 0.18);
     box-shadow: 0 0 12px #0b0e05;
     transform: scale(1.05);
 }
 
-/* ===== VOCALISTA – BOTÃO PRETO ===== */
 .item.vocalista .information {
     padding: 10px 26px;
     border-radius: 40px;
@@ -210,13 +214,13 @@ section .list .item.active {
     transition: 0.3s ease;
     backdrop-filter: blur(6px);
 }
+
 .item.vocalista .information:hover {
     background: rgba(0, 0, 0, 0.85);
     box-shadow: 0 0 15px #000;
     transform: scale(1.05);
 }
 
-/* ===== GUITARRISTA – VERDE NEON ===== */
 .item.guitarrista .information {
     padding: 10px 26px;
     border-radius: 40px;
@@ -227,23 +231,25 @@ section .list .item.active {
     transition: 0.3s ease;
     backdrop-filter: blur(5px);
 }
+
 .item.guitarrista .information:hover {
     background: rgba(0, 255, 106, 0.18);
     box-shadow: 0 0 15px #00ff6a;
     transform: scale(1.05);
 }
 
-/* ===== PIANISTA – AZUL PROFUNDO ===== */
 .item.pianista .information {
     padding: 10px 26px;
     border-radius: 40px;
-    background: rgba(0, 0, 0, 0.6);;
+    background: rgba(0, 0, 0, 0.6);
+    ;
     border: 2px solid #1db4ff;
     color: #1db4ff;
     cursor: pointer;
     transition: 0.3s ease;
     backdrop-filter: blur(5px);
 }
+
 .item.pianista .information:hover {
     background: rgba(29, 180, 255, 0.18);
     box-shadow: 0 0 15px #1db4ff;
@@ -312,6 +318,9 @@ section .list .item.active {
     background-color: #beff1b;
 }
 
+/* ================================================== */
+/* =============== MOBILE RESPONSIVE ================= */
+/* ================================================== */
 
 @media (max-width: 900px) {
 
@@ -322,17 +331,7 @@ section .list .item.active {
         grid-template-columns: 1fr;
         justify-items: center;
         gap: 8px;
-
-        position: fixed;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-
         background: none !important;
-        backdrop-filter: none !important;
-        box-shadow: none !important;
-
-        z-index: 50;
     }
 
     header img {
@@ -347,7 +346,7 @@ section .list .item.active {
     /* SECTION */
     section {
         height: 100vh;
-        padding-top: 100px;
+        padding-top: 80px;
         background-attachment: scroll;
     }
 
@@ -357,16 +356,22 @@ section .list .item.active {
         height: 100%;
     }
 
+    /* ITEM — CENTRALIZADO */
     section .list .item {
         position: absolute;
         inset: 0;
-        opacity: 0;
-        transition: 0.6s ease;
-        transform: translateX(calc(100vw * var(--calculation)));
+
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
-        justify-content: center;
+
+        text-align: center;
+        padding-top: 10px;
+
+        opacity: 0;
+        transform: translateX(calc(100vw * var(--calculation)));
+        transition: 0.6s ease;
     }
 
     section .list .item.active {
@@ -374,68 +379,68 @@ section .list .item.active {
         transform: translateX(0);
     }
 
-    /* ========================= */
-    /* IMAGEM DA BANDA - MOBILE  */
-    /* ========================= */
+    /* IMAGEM MAIOR */
     .banda-img {
+        position: relative;
         width: 80%;
         margin: 0 auto;
-        position: relative;
-        top: -45px;          /* SUBIDO */
         transform: none;
+        top: 0;
+        left: 0;
     }
 
     .banda-img img {
         width: 100%;
+        transform: scale(1.15);
         left: 0;
-        transform: scale(1);
     }
 
     .banda-img::before {
-        width: 180px;
-        height: 180px;
-        filter: blur(25px);
+        width: 200px;
+        height: 200px;
+        filter: blur(40px);
     }
 
-    /* ========================= */
-    /*       CONTEÚDO            */
-    /* ========================= */
+    /* CONTENT — TOTALMENTE CENTRALIZADO */
     .content {
-        width: 90%;
         position: relative;
-        margin-top: -25px;   /* SUBIDO */
+        width: 100%;
+        max-width: 600px;
+
+        margin-top: 10px;
+        padding: 0 20px;
+
+        align-items: center;
         text-align: center;
+
         gap: 10px;
+        right: 0;
     }
 
     .content h2 {
-        font-size: 2.6em;
+        font-size: 2.8em;
+        text-align: center;
     }
 
     .description {
-        max-width: 95%;
-        font-size: 13px;
+        max-width: 90%;
+        margin: 0 auto;
         text-align: center;
+        font-size: 13px;
         padding: 12px 15px;
-        margin-top: 0px;     /* SUBIDO */
     }
 
-    /* BOTÃO “VEJA MAIS” */
+    /* BOTÃO CENTRALIZADO */
     .information {
-        align-self: center;
-        margin-top: 5px;
+        margin-top: 10px;
     }
 
-    /* ========================= */
-    /*          ARROWS           */
-    /* ========================= */
+    /* ARROWS */
     .arrows {
         width: 100%;
-        position: absolute;
-        bottom: 90px;        /* ANTES: 140px — SUBIDO */
-        display: flex;
-        justify-content: space-between;
+        bottom: 90px;
         padding: 0 35px;
+        position: absolute;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -445,23 +450,15 @@ section .list .item.active {
         height: 40px;
     }
 
-    /* ========================= */
-    /*        INDICATORS         */
-    /* ========================= */
+    /* INDICATORS */
     .indicators {
         width: 100%;
         bottom: 40px;
-        transform: translateX(-50%);
         gap: 8px;
     }
 
     .indicators .number {
         font-size: 2.8em;
-        text-align: center;
-    }
-
-    .indicators ul {
-        justify-content: center;
     }
 
     .indicators ul li {
