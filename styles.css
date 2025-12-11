@@ -312,126 +312,151 @@ section .list .item.active {
     background-color: #beff1b;
 }
 
-/* ===== RESPONSIVO ===== */
+
 @media (max-width: 900px) {
 
     /* HEADER */
     header {
         width: 100%;
-        padding: 20px;
+        padding: 10px 0;
         grid-template-columns: 1fr;
         justify-items: center;
-        gap: 10px;
-        position: absolute;
+        gap: 8px;
+
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background: none !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+
+        z-index: 50;
     }
 
     header img {
-        width: 180px;
+        width: 150px;
     }
 
     header nav ul {
         grid-template-columns: repeat(3, auto);
-        gap: 20px;
+        gap: 18px;
     }
 
     /* SECTION */
     section {
-        height: auto;
-        padding-top: 180px;
-        padding-bottom: 160px;
+        height: 100vh;
+        padding-top: 100px;
         background-attachment: scroll;
     }
 
     /* LIST */
     section .list {
         width: 100%;
+        height: 100%;
     }
 
-    /* ITEM */
     section .list .item {
-        position: relative;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: 0.6s ease;
+        transform: translateX(calc(100vw * var(--calculation)));
         display: flex;
         flex-direction: column;
         align-items: center;
-        transform: translateX(0) !important;
-        opacity: 0;
+        justify-content: center;
     }
 
     section .list .item.active {
         opacity: 1;
+        transform: translateX(0);
     }
 
-    /* IMAGEM */
+    /* ========================= */
+    /* IMAGEM DA BANDA - MOBILE  */
+    /* ========================= */
     .banda-img {
+        width: 80%;
+        margin: 0 auto;
         position: relative;
-        top: 0;
-        left: 0;
+        top: -45px;          /* SUBIDO */
         transform: none;
-        width: 85%;
-        margin-bottom: 30px;
     }
 
     .banda-img img {
-        transform: scale(1);
+        width: 100%;
         left: 0;
+        transform: scale(1);
     }
 
     .banda-img::before {
-        width: 250px;
-        height: 250px;
-        filter: blur(30px);
+        width: 180px;
+        height: 180px;
+        filter: blur(25px);
     }
 
-    /* CONTENT */
+    /* ========================= */
+    /*       CONTEÚDO            */
+    /* ========================= */
     .content {
-        position: relative;
-        right: 0;
         width: 90%;
-        align-items: center;
+        position: relative;
+        margin-top: -25px;   /* SUBIDO */
         text-align: center;
-        gap: 12px;
-    }
-
-    .description {
-        text-align: center;
-        max-width: 95%;
-        font-size: 14px;
+        gap: 10px;
     }
 
     .content h2 {
-        font-size: 3em;
+        font-size: 2.6em;
     }
 
-    /* BOTÕES */
+    .description {
+        max-width: 95%;
+        font-size: 13px;
+        text-align: center;
+        padding: 12px 15px;
+        margin-top: 0px;     /* SUBIDO */
+    }
+
+    /* BOTÃO “VEJA MAIS” */
     .information {
         align-self: center;
+        margin-top: 5px;
     }
 
-    /* ARROWS */
+    /* ========================= */
+    /*          ARROWS           */
+    /* ========================= */
     .arrows {
         width: 100%;
-        bottom: 20px;
-        top: auto;
-        transform: translate(-50%, 0);
-        padding: 0 30px;
+        position: absolute;
+        bottom: 90px;        /* ANTES: 140px — SUBIDO */
+        display: flex;
+        justify-content: space-between;
+        padding: 0 35px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .arrows button {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
 
-    /* INDICATORS */
+    /* ========================= */
+    /*        INDICATORS         */
+    /* ========================= */
     .indicators {
         width: 100%;
-        bottom: 20px;
-        left: 50%;
+        bottom: 40px;
         transform: translateX(-50%);
-        gap: 5px;
+        gap: 8px;
     }
 
     .indicators .number {
-        font-size: 3em;
+        font-size: 2.8em;
         text-align: center;
     }
 
@@ -440,7 +465,7 @@ section .list .item.active {
     }
 
     .indicators ul li {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
     }
 }
